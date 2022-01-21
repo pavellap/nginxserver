@@ -1,14 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    fetch('/api-github/repos/pavellap/tables').then(res => res.json()).then(res => console.log("RESULT: ", res))
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          This comes from custom webpack config
         </p>
         <a
           className="App-link"
